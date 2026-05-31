@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NE555DR
+D Single Precision Timer
+K
+F http://www.ti.com/lit/ds/symlink/ne555.pdf
+$ENDCMP
+#
+$CMP FS8205A
+D Dual N-Channel Enhancement Power Mosfet
+K
+F http://www.techpublic.com.tw/pdf/FS8205A.pdf
+$ENDCMP
+#
+#End Doc Library

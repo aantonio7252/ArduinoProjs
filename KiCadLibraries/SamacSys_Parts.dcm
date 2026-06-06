@@ -12,4 +12,28 @@ K
 F http://www.techpublic.com.tw/pdf/FS8205A.pdf
 $ENDCMP
 #
+$CMP ATMEGA328P-AU
+D MICROCHIP - ATMEGA328P-AU. - MICROCONTROLLER MCU, 8 BIT, ATMEGA, 20MHZ, TQFP-32
+K
+F https://componentsearchengine.com/Datasheets/2/ATMEGA328P-AU.pdf
+$ENDCMP
+#
+$CMP ESD441DPLR
+D ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125
+K
+F https://www.ti.com/lit/ds/symlink/esd441.pdf?ts=1730589139389&ref_url=https%253A%252F%252Fapp.ultralibrarian.com%252F
+$ENDCMP
+#
+$CMP ESD321DPYR
+D 1-Channel 30 kV ESD Protection Diode With Low Capacitance (< 1pF) in 0402 Package
+K
+F http://www.ti.com/lit/gpn/esd321
+$ENDCMP
+#
+$CMP STUSB4531BJR
+D Standalone SINK USB PD controller
+K
+F https://www.st.com/resource/en/datasheet/stusb4531.pdf
+$ENDCMP
+#
 #End Doc Library

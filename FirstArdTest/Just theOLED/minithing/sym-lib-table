@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "SamacSys_Parts")(type "Legacy")(uri "C:/Users/Cloud/OneDrive/Documents/ArduinoProjs/KiCadLibraries/SamacSys_Parts.lib")(options "")(descr ""))
+  (lib (name "UJ31-CH-31-SMT-TR")(type "KiCad")(uri "C:/Users/Cloud/OneDrive/Documents/ArduinoProjs/KiCadLibraries/UJ31-CH-31-SMT-TR.kicad_sym")(options "")(descr ""))
+  (lib (name "DW01A-G")(type "KiCad")(uri "C:/Users/Cloud/OneDrive/Documents/ArduinoProjs/KiCadLibraries/DW01A-G.kicad_sym")(options "")(descr ""))
+)

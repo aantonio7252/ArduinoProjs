@@ -36,4 +36,34 @@ K
 F https://www.st.com/resource/en/datasheet/stusb4531.pdf
 $ENDCMP
 #
+$CMP TP4056
+D 1A Standalone Linear Li-lon Battery Charger, SOP-8
+K
+F https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Prototyping/TP4056.pdf
+$ENDCMP
+#
+$CMP DS3231MZ+
+D Real Time Clock 5+/-ppm RTC
+K
+F http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf
+$ENDCMP
+#
+$CMP USB4110-GF-A
+D CONN USB 2.0 TYPE-C R/A SMT
+K
+F https://gct.co/files/drawings/usb4110.pdf
+$ENDCMP
+#
+$CMP AHT20
+D Integrated temperature and humidity Sensor DC : 2.2 - 5.5V, 0 ~ 100% RH, -40 ~ + 85 .
+K
+F http://www.aosong.com/userfiles/files/media/Data%20Sheet%20AHT20.pdf
+$ENDCMP
+#
+$CMP ENS161-BLGT_LGA9_T&R_1k5
+D Air Quality Sensors ENS161-BLGT LGA9 T&R 1K5 -  Digital Metal-Oxide Multi-Gas Sensor with permanent and low power mode of operation
+K
+F https://www.sciosense.com/wp-content/uploads/2023/12/ENS161-Datasheet.pdf
+$ENDCMP
+#
 #End Doc Library

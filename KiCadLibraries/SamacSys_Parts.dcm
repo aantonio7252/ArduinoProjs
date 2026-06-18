@@ -66,4 +66,10 @@ K
 F https://www.sciosense.com/wp-content/uploads/2023/12/ENS161-Datasheet.pdf
 $ENDCMP
 #
+$CMP MCP23008T-E_ML
+D MICROCHIP - MCP23008T-E/ML - I/O EXPANDER, 8BIT, 1.7MHZ, QFN-20
+K
+F https://ww1.microchip.com/downloads/en/DeviceDoc/21919e.pdf
+$ENDCMP
+#
 #End Doc Library

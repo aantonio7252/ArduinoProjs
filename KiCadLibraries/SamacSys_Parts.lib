@@ -386,4 +386,31 @@ P 5 0 1 6 200 400 1000 400 1000 -900 200 -900 200 400 N
 ENDDRAW
 ENDDEF
 #
+#SamacSys ECAD Model 1N4733A
+#/18351248/2042506/2.50/2/2/Zener Diode
+DEF 1N4733A Z 0 30 Y Y 1 F N
+F0 "Z" 400 350 50 H V L CNN
+F1 "1N4733A" 400 250 50 H V L CNN
+F2 "DIOAD1405W86L465D235" 400 150 50 H I L CNN
+F3 "https://www.panjit.com.tw/en/Product/downloadPDF/1N4733A" 400 50 50 H I L CNN
+F4 "Zener Diodes - 1N4733A , 1000mW, 5V, 5.14.7, DO-41" 400 -50 50 H I L CNN "Description"
+F5 "" 400 -150 50 H I L CNN "Height"
+F6 "PANJIT" 400 -250 50 H I L CNN "Manufacturer_Name"
+F7 "1N4733A" 400 -350 50 H I L CNN "Manufacturer_Part_Number"
+F8 "" 400 -450 50 H I L CNN "Mouser Part Number"
+F9 "" 400 -550 50 H I L CNN "Mouser Price/Stock"
+F10 "" 400 -650 50 H I L CNN "Arrow Part Number"
+F11 "" 400 -750 50 H I L CNN "Arrow Price/Stock"
+DRAW
+X ~ 1 0 0 100 R 50 50 0 0 P
+X ~ 2 600 0 100 L 50 50 0 0 P
+P 2 0 1 6 200 80 200 -80 N
+P 2 0 1 6 200 80 240 100 N
+P 2 0 1 6 160 -100 200 -80 N
+P 2 0 1 6 100 0 200 0 N
+P 2 0 1 6 500 0 400 0 N
+P 4 0 1 10 200 0 400 100 400 -100 200 0 F
+ENDDRAW
+ENDDEF
+#
 #End Library

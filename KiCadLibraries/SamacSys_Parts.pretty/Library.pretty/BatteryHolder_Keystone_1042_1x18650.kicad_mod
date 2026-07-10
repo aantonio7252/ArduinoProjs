@@ -1,0 +1,326 @@
+(footprint "BatteryHolder_Keystone_1042_1x18650"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Battery holder, Keystone 1042, battery type 1x18650, http://www.keyelco.com/product.cfm/product_id/918, generated with kicad-footprint-generator StandardBox_generator.py")
+	(tags "horizontal single")
+	(property "Reference" "REF**"
+		(at 0 -11.53 0)
+		(layer "F.SilkS")
+		(uuid "dc32701c-0947-49ee-989e-bdbef3fe9f0c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "BatteryHolder_Keystone_1042_1x18650"
+		(at 0 11.53 0)
+		(layer "F.Fab")
+		(uuid "e3942111-e7d8-44e0-a61d-5cdfdb8f6749")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0cdbb1a8-d77d-4a42-9a73-9726879e94e8")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "701837b6-ceb7-41ab-8a4c-67ba57d54233")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -38.89 -10.685)
+		(end 38.89 -10.685)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "cf862ab8-1eee-44e8-9cb2-8126b5010409")
+	)
+	(fp_line
+		(start -38.89 -3.51)
+		(end -38.89 -10.685)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "56d3dcaf-1158-4ab9-b5e0-15805c90e58a")
+	)
+	(fp_line
+		(start -38.89 10.685)
+		(end -38.89 3.51)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a1302704-9bad-4725-94ce-9422c09c0850")
+	)
+	(fp_line
+		(start 38.89 -10.685)
+		(end 38.89 -3.51)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9b066f17-2aa8-4394-90f0-b73f41fbb9b8")
+	)
+	(fp_line
+		(start 38.89 3.51)
+		(end 38.89 10.685)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fac83c57-b1a1-413d-9931-7175745da2b1")
+	)
+	(fp_line
+		(start 38.89 10.685)
+		(end -38.89 10.685)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2ab4ccc6-9921-4bf2-a3e9-584704a08b9e")
+	)
+	(fp_line
+		(start -43.94 -3.75)
+		(end -39.03 -3.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "24d31c18-da9d-4316-aa2c-c8dc8d4d8563")
+	)
+	(fp_line
+		(start -43.94 3.75)
+		(end -43.94 -3.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f4477870-d939-42f5-8476-41f3bd8b217a")
+	)
+	(fp_line
+		(start -39.03 -10.83)
+		(end 39.03 -10.83)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "dc2cf24b-32a6-4d64-863c-d1d017f7c145")
+	)
+	(fp_line
+		(start -39.03 -3.75)
+		(end -39.03 -10.83)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "220d12b0-3241-44ed-b387-dfbce1b74cd9")
+	)
+	(fp_line
+		(start -39.03 3.75)
+		(end -43.94 3.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "4aa37767-3fb7-45ee-8ae9-123441965b4a")
+	)
+	(fp_line
+		(start -39.03 10.83)
+		(end -39.03 3.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e9e77d64-102b-4ed7-9002-781a62ea0ce8")
+	)
+	(fp_line
+		(start 39.03 -10.83)
+		(end 39.03 -3.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "39c4f0dc-2119-4db4-8f91-7b2b8baf7059")
+	)
+	(fp_line
+		(start 39.03 -3.75)
+		(end 43.94 -3.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "59e00adc-4d53-40a8-9c04-8a8ba8a25194")
+	)
+	(fp_line
+		(start 39.03 3.75)
+		(end 39.03 10.83)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c5b578f6-7388-4956-906e-65b5f722c4fc")
+	)
+	(fp_line
+		(start 39.03 10.83)
+		(end -39.03 10.83)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c5700b6f-ed7a-403b-a79f-34256c9e995b")
+	)
+	(fp_line
+		(start 43.94 -3.75)
+		(end 43.94 3.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a723afc1-d62a-40d6-9e2c-a0ee93cba42a")
+	)
+	(fp_line
+		(start 43.94 3.75)
+		(end 39.03 3.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "11f9c853-fa67-4b74-a4e8-0cc10e81ec67")
+	)
+	(fp_rect
+		(start -38.53 -10.325)
+		(end 38.53 10.325)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "7feb21ab-106a-43cb-b4a4-b235422301ee")
+	)
+	(fp_text user "+"
+		(at -40 -5 0)
+		(layer "F.SilkS")
+		(uuid "4216200b-2039-4a75-a60b-4546b20e1cb2")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "17109375-b52a-4651-b86f-f7e9ee909f38")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "+"
+		(at -35 -0.15 0)
+		(layer "F.Fab")
+		(uuid "312a3bf4-6b8b-4734-92a9-7e58109edcce")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at -36.13 -8)
+		(size 2.39 2.39)
+		(drill 2.39)
+		(layers "*.Cu" "*.Mask")
+		(uuid "a4ec7539-d9f6-408b-9ac9-9cbf10793e0d")
+	)
+	(pad "" np_thru_hole circle
+		(at -27.62 8)
+		(size 3.45 3.45)
+		(drill 3.45)
+		(layers "*.Cu" "*.Mask")
+		(uuid "4d8f0bc8-1c44-4377-9241-21ed04aee7a1")
+	)
+	(pad "" np_thru_hole circle
+		(at 27.62 -8)
+		(size 3.45 3.45)
+		(drill 3.45)
+		(layers "*.Cu" "*.Mask")
+		(uuid "819988b0-2b4b-49d9-b323-38602b3a75d0")
+	)
+	(pad "1" smd roundrect
+		(at -39.69 0)
+		(size 7.5 6.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.038462)
+		(uuid "a0066f57-f429-4aeb-ada6-8bc36b257098")
+	)
+	(pad "2" smd roundrect
+		(at 39.69 0)
+		(size 7.5 6.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.038462)
+		(uuid "090b459e-44fb-47c0-8761-ad12cbf87ad0")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Battery.3dshapes/BatteryHolder_Keystone_1042_1x18650.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

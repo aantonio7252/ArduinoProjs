@@ -1,4 +1,4 @@
-26634610375616589
+26663112783491185
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -70552,6 +70552,20 @@ Yellow 5381 Series LED
 0
 2
 2
+Library
+6mm switch
+
+
+0
+4
+4
+Library
+BatteryHolder_Keystone_1042_1x18650
+Battery holder, Keystone 1042, battery type 1x18650, http://www.keyelco.com/product.cfm/product_id/918, generated with kicad-footprint-generator StandardBox_generator.py
+horizontal single
+0
+2
+2
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -97103,6 +97117,104 @@ rotary encoder illuminated switch vertical
 0
 9
 8
+SamacSys_Parts
+128x64OLED
+
+
+0
+4
+4
+SamacSys_Parts
+AHT20
+AHT20-1
+Undefined or Miscellaneous
+0
+6
+6
+SamacSys_Parts
+BGA16C40P4X4_226X226X54
+STUSB4531BJR
+Integrated Circuit
+0
+16
+16
+SamacSys_Parts
+DIOAD1405W86L465D235
+DO-41
+Zener Diode
+0
+2
+2
+SamacSys_Parts
+DPY_R-PX1SON-N2_
+DPY (R-PX1SON-N2)
+TVS Diode (Bi-directional)
+0
+2
+2
+SamacSys_Parts
+ENS161BLGTLGA9TR1k5
+ENS161-BLGT LGA9 T&R 1k5-1
+Integrated Circuit
+0
+9
+9
+SamacSys_Parts
+ESD441DPLR
+ESD441DPLR-8
+TVS Diode (Uni-directional)
+0
+2
+2
+SamacSys_Parts
+NE555DR
+D (R-PDSO-G8)
+Integrated Circuit
+0
+8
+8
+SamacSys_Parts
+QFN50P400X400X100-21N-D
+(ML) 20-Lead QFN
+Integrated Circuit
+0
+21
+21
+SamacSys_Parts
+QFP80P900X900X120-32N
+32A
+Integrated Circuit
+0
+32
+32
+SamacSys_Parts
+SOIC127P600X175-8N
+8 SO-3
+Integrated Circuit
+0
+8
+8
+SamacSys_Parts
+SOIC127P600X175-9N
+SOP-8
+Connector
+0
+9
+9
+SamacSys_Parts
+SOT95P280X125-6N
+SOT23-6
+MOSFET (N-Channel)
+0
+6
+6
+SamacSys_Parts
+USB4110GFA
+USB4110-GF-A-1
+Connector
+0
+20
+20
 Sensor
 ASAIR_AM2302_P2.54mm_Lead2.75mm_TabDown
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/AM2302.pdf

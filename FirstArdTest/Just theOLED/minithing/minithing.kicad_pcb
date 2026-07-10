@@ -4856,7 +4856,7 @@
 		(property "Reference" "LI-IONbatt1"
 			(at 0 -11.53 0)
 			(layer "F.SilkS")
-			(uuid "eed5134e-5cef-4168-a53a-9068899a9d7b")
+			(uuid "d8ce754a-95b8-48d0-ae1f-147be901961c")
 			(effects
 				(font
 					(size 1 1)
@@ -4867,7 +4867,7 @@
 		(property "Value" "BATTERY"
 			(at 0 11.53 0)
 			(layer "F.Fab")
-			(uuid "43109f32-84a6-43a5-8691-092cb32d769e")
+			(uuid "5c921ef8-ab12-4e49-b6d4-5d162782101c")
 			(effects
 				(font
 					(size 1 1)
@@ -4879,7 +4879,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "42ad78ce-f0e2-4c36-a3a0-3103114aafae")
+			(uuid "e5d11c12-30e6-4a8e-9ad9-9a089909b98d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4891,7 +4891,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3eb55c3a-2017-4a20-82c7-cf90473c1d41")
+			(uuid "43290a89-2218-4777-94bf-b497d520b8b5")
 			(effects
 				(font
 					(size 1.27 1.27)

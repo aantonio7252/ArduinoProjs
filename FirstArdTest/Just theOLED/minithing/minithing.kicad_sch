@@ -2381,254 +2381,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "SamacSys_Parts:1N4733A"
-			(pin_names
-				(offset 0.762)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Z"
-				(at 10.16 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "1N4733A"
-				(at 10.16 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "DIOAD1405W86L465D235"
-				(at 10.16 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.panjit.com.tw/en/Product/downloadPDF/1N4733A"
-				(at 10.16 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "Zener Diodes - 1N4733A , 1000mW, 5V, 5.14.7, DO-41"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "Zener Diodes - 1N4733A , 1000mW, 5V, 5.14.7, DO-41"
-				(at 10.16 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Height" ""
-				(at 10.16 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "PANJIT"
-				(at 10.16 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "1N4733A"
-				(at 10.16 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" ""
-				(at 10.16 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" ""
-				(at 10.16 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" ""
-				(at 10.16 -16.51 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" ""
-				(at 10.16 -19.05 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(symbol "1N4733A_0_0"
-				(pin passive line
-					(at 0 0 0)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 15.24 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "1N4733A_0_1"
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 5.08 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.064 -2.54) (xy 5.08 -2.032)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.032) (xy 5.08 -2.032)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.032) (xy 6.096 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 0) (xy 10.16 2.54) (xy 10.16 -2.54) (xy 5.08 0)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 0) (xy 10.16 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "SamacSys_Parts:AHT20"
 			(pin_names
 				(offset 0.762)
@@ -4554,6 +4306,12 @@
 		(uuid "22be38f0-0004-4fc4-bfd5-0cf0bd17cebe")
 	)
 	(junction
+		(at 66.04 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2c126278-6942-45bb-a7be-bb57d751b1ea")
+	)
+	(junction
 		(at 245.11 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4576,12 +4334,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "493f53f1-c9fa-4016-9a8e-2c979d417eb9")
-	)
-	(junction
-		(at 60.96 60.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4eb4a73b-d12a-4bc4-b024-3b70d311f4ac")
 	)
 	(junction
 		(at 48.26 66.04)
@@ -4674,6 +4426,12 @@
 		(uuid "883106f6-9772-43e7-b0bf-926e8c67add3")
 	)
 	(junction
+		(at 152.4 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "888816d7-2d59-47b8-8369-451b184b7403")
+	)
+	(junction
 		(at 181.61 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4728,12 +4486,6 @@
 		(uuid "bddbeb9d-9841-4d9f-9399-8540ef758c25")
 	)
 	(junction
-		(at 152.4 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "be7c03d5-8f28-405a-9755-7126a546c147")
-	)
-	(junction
 		(at 229.87 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4762,6 +4514,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dcc938db-3604-4463-907f-4bb323a098f2")
+	)
+	(junction
+		(at 234.95 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e0a5ba34-3eca-4556-84c5-7fa879bc3cfc")
 	)
 	(junction
 		(at 176.53 69.85)
@@ -4798,12 +4556,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fd5d8350-7d2b-43f7-adb5-9e811485259f")
-	)
-	(junction
-		(at 66.04 60.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "febec7ee-4b01-47ee-b8ab-20cd45bb28ed")
 	)
 	(wire
 		(pts
@@ -4897,16 +4649,6 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 60.96) (xy 88.9 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e02f62c-c496-450a-8b0a-4c9976517e03")
-	)
-	(wire
-		(pts
 			(xy 176.53 144.78) (xy 181.61 144.78)
 		)
 		(stroke
@@ -4964,16 +4706,6 @@
 			(type default)
 		)
 		(uuid "13b7584a-0d6b-4200-a1b8-a106ab7451b6")
-	)
-	(wire
-		(pts
-			(xy 110.49 53.34) (xy 152.4 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16a54857-24f9-413a-94f4-ce1968711bd0")
 	)
 	(wire
 		(pts
@@ -5277,16 +5009,6 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 53.34) (xy 166.37 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "477d6a42-420e-4409-a79b-34ef9d1f142e")
-	)
-	(wire
-		(pts
 			(xy 278.13 162.56) (xy 242.57 162.56)
 		)
 		(stroke
@@ -5344,6 +5066,16 @@
 			(type default)
 		)
 		(uuid "4e70afc6-f185-4f66-a0c6-62a70e434dd2")
+	)
+	(wire
+		(pts
+			(xy 152.4 53.34) (xy 176.53 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f0db2e7-397a-451b-8d1e-361ed18f1bf3")
 	)
 	(wire
 		(pts
@@ -5474,6 +5206,16 @@
 			(type default)
 		)
 		(uuid "623cccfc-2e4d-451a-8ae7-ca42e750bd59")
+	)
+	(wire
+		(pts
+			(xy 234.95 45.72) (xy 234.95 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6257a3be-cad6-4c46-9930-4de325508172")
 	)
 	(wire
 		(pts
@@ -5727,16 +5469,6 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 60.96) (xy 66.04 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "933b1059-6bea-4c25-b020-4dd48f0c14a3")
-	)
-	(wire
-		(pts
 			(xy 210.82 114.3) (xy 210.82 101.6)
 		)
 		(stroke
@@ -5777,16 +5509,6 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 53.34) (xy 166.37 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "98d501f6-6483-42f9-a7f5-bb4b21909f94")
-	)
-	(wire
-		(pts
 			(xy 96.52 60.96) (xy 110.49 60.96)
 		)
 		(stroke
@@ -5817,6 +5539,16 @@
 	)
 	(wire
 		(pts
+			(xy 66.04 60.96) (xy 88.9 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99970065-0437-46d2-98bf-383ab48ef14f")
+	)
+	(wire
+		(pts
 			(xy 100.33 83.82) (xy 100.33 90.17)
 		)
 		(stroke
@@ -5844,6 +5576,16 @@
 			(type default)
 		)
 		(uuid "9e4a035a-cb0a-4e14-b047-835cd0670e2f")
+	)
+	(wire
+		(pts
+			(xy 176.53 53.34) (xy 176.53 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ecab8df-ee1b-444f-9915-96c01f35d0ca")
 	)
 	(wire
 		(pts
@@ -6047,6 +5789,16 @@
 	)
 	(wire
 		(pts
+			(xy 110.49 53.34) (xy 152.4 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "baaa0fd4-d2d8-438a-857a-95d15ea1d011")
+	)
+	(wire
+		(pts
 			(xy 90.17 90.17) (xy 90.17 91.44)
 		)
 		(stroke
@@ -6127,7 +5879,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 60.96) (xy 60.96 60.96)
+			(xy 48.26 60.96) (xy 66.04 60.96)
 		)
 		(stroke
 			(width 0)
@@ -6257,6 +6009,16 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 45.72) (xy 234.95 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d78471e3-3abc-4724-9a81-1cea7a1285ed")
+	)
+	(wire
+		(pts
 			(xy 242.57 119.38) (xy 245.11 119.38)
 		)
 		(stroke
@@ -6274,16 +6036,6 @@
 			(type default)
 		)
 		(uuid "d973acff-121c-4d2f-9a70-b2edee88e361")
-	)
-	(wire
-		(pts
-			(xy 60.96 60.96) (xy 60.96 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da258c3c-5d3d-409e-9085-d259ca666c65")
 	)
 	(wire
 		(pts
@@ -10848,158 +10600,6 @@
 		)
 	)
 	(symbol
-		(lib_id "SamacSys_Parts:1N4733A")
-		(at 60.96 85.09 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b72f07c0-72ed-4d93-a9a4-b5b41192cb07")
-		(property "Reference" "Z1"
-			(at 64.77 76.1999 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "1N4733A"
-			(at 64.77 78.7399 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "SamacSys_Parts:DIOAD1405W86L465D235"
-			(at 57.15 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.panjit.com.tw/en/Product/downloadPDF/1N4733A"
-			(at 59.69 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zener Diodes - 1N4733A , 1000mW, 5V, 5.14.7, DO-41"
-			(at 60.96 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "Zener Diodes - 1N4733A , 1000mW, 5V, 5.14.7, DO-41"
-			(at 62.23 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 64.77 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "PANJIT"
-			(at 67.31 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "1N4733A"
-			(at 69.85 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 72.39 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 74.93 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 77.47 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 80.01 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "472b15f7-fd6d-4a56-a5a5-8d34f125362a")
-		)
-		(pin "2"
-			(uuid "d42a6b46-6bf0-415d-963f-5f0ba26fb40c")
-		)
-		(instances
-			(project ""
-				(path "/d717513f-228d-40ff-a576-44c7a34457d9"
-					(reference "Z1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 209.55 68.58 0)
 		(unit 1)
@@ -11932,72 +11532,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 60.96 85.09 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "df7e9098-3ed7-410f-81de-d8e754a3dc98")
-		(property "Reference" "#PWR01"
-			(at 60.96 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 60.96 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 60.96 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 60.96 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 60.96 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c216cb81-5bc4-4967-b39a-894b87586b04")
-		)
-		(instances
-			(project ""
-				(path "/d717513f-228d-40ff-a576-44c7a34457d9"
-					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 60.96 102.87 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12270,7 +11804,7 @@
 	)
 	(symbol
 		(lib_id "Diode:SMAJ5.0A")
-		(at 66.04 64.77 90)
+		(at 66.04 64.77 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12284,7 +11818,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "SMAJ5.0A"
@@ -12293,11 +11827,11 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMC_Handsoldering"
-			(at 71.12 64.77 0)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 60.96 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12306,7 +11840,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
-			(at 66.04 66.04 0)
+			(at 66.04 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -20,6 +20,20 @@ Adafruit_AHTX0 aht;
 RTC_DS3231 rtc;
 Adafruit_MCP23X08 mcp;
 
+//Function Variables for given attachments
+/*
+Function isCharging() returns True if charging
+Function isChargeComplete() returns True if fully charged
+Function getBatteryVoltage() returns the voltage of the battery
+Function readAHT20(float &temp, float &hum) returns the temperature and humidity
+Function readRTC() returns the current time and date
+Function readSwitch(uint8_t swNum) returns the state of the switch
+
+Variables temp, hum, batteryVoltage are declared in the global scope
+Variables RTC is declared in the global scope
+
+*/
+
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
@@ -65,7 +79,7 @@ static const unsigned char PROGMEM logo_bmp[] =
 // --------------------------------------------------------
 // Hardware Functions
 // --------------------------------------------------------
-void initHardware() {
+void initHardware() { //Checks whether sensors exist
   pinMode(TP4056_STDBY, INPUT_PULLUP);
   pinMode(TP4056_CHRG, INPUT_PULLUP);
 
@@ -84,18 +98,18 @@ void initHardware() {
   }
 }
 
-bool isCharging() {
-  return digitalRead(TP4056_CHRG) == LOW; 
-}
-
+bool isCharging() { 
+  return digitalRead(TP4056_CHRG) == LOW; }
 bool isChargeComplete() {
-  return digitalRead(TP4056_STDBY) == LOW;
-}
+  return digitalRead(TP4056_STDBY) == LOW;}
 
 float getBatteryVoltage() {
   int rawValue = analogRead(BATT_VOLTAGE_PIN); 
   // Assuming 5V reference and voltage divider that halves the voltage
-  return (rawValue / 1023.0) * 5.0 * 2.0; 
+  return (rawValue / 1023.0) * 3.7 * 2.0; 
+} //Returns batt voltage
+int getBatteryPercent(){
+  return (getBatteryVoltage() / 3.7) * 100;
 }
 
 void readAHT20(float &temp, float &hum) {
@@ -103,7 +117,7 @@ void readAHT20(float &temp, float &hum) {
   aht.getEvent(&humidity_event, &temp_event);
   temp = temp_event.temperature;
   hum = humidity_event.relative_humidity;
-}
+} //variables: temp, hum
 
 DateTime readRTC() {
   return rtc.now();
@@ -124,23 +138,27 @@ void setup() {
     for(;;); // Don't proceed, loop forever
   }
 
-  // Show initial display buffer contents on the screen --
-  // the library initializes this with an Adafruit splash screen.
+  // Show initial display buffer contents on the screen
   display.display(); //Shows the adafruit dispay
   delay(2000); // Pause for 2 seconds
 
   display.clearDisplay();
   display.display();
   delay(2000);
-  grid();
-}
 
+
+  //grid();
+}
+void placeBmap(const uint8_t *bitmap, int x, int y, int w, int h){
+  drawBitmap(bitmap,x,y,w,h);
+}
 void drawBattery(int w, int h, int percent){
   //Battery is situated at top right corner, 16x16
-  drawBitmap(display.width()-w, display.height()-h, w, h);
-  for (int i=0;i<(percent * 8)/100;i++){
-    
+  placeBmap(battery, display.width()-w, display.height()-h, w, h);
+  for (int i=0;i<(percent * 9)/100;i++){
+    display.drawRect(display.width()-w+4+i,display.height()-h)
   }
+  display.display();
 }
 void grid(){
   int16_t i;

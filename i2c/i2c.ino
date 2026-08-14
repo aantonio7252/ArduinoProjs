@@ -31,7 +31,7 @@ void loop() {
   // Re-enable I2C after analogRead took over the pins
   WIRE.begin();
 
-  Serial.println("Scanning...");
+  Serial.print("Scanning...");
 
   nDevices = 0;
   for(address = 1; address < 127; address++ )
@@ -65,5 +65,5 @@ void loop() {
   else
     Serial.println("done\n");
 
-  delay(5000);           // wait 5 seconds for next scan
+  delay(100);           // wait 5 seconds for next scan
 }

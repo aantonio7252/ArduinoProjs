@@ -4318,12 +4318,6 @@
 		(uuid "2c126278-6942-45bb-a7be-bb57d751b1ea")
 	)
 	(junction
-		(at 245.11 118.11)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2ec66538-4917-4679-8bc5-d0f1491b844d")
-	)
-	(junction
 		(at 191.77 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4388,6 +4382,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6663ca9e-10a1-41c5-945b-c7f2074bd10d")
+	)
+	(junction
+		(at 245.11 118.11)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6c9fe97b-5a71-42c3-9ef6-af2a67611d5b")
 	)
 	(junction
 		(at 139.7 144.78)
@@ -4486,12 +4486,6 @@
 		(uuid "af8816b4-c281-412a-9aa3-21ef726828d3")
 	)
 	(junction
-		(at 248.92 120.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b1668aa3-92e6-49e8-8082-27aef35fbdcc")
-	)
-	(junction
 		(at 275.59 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4562,6 +4556,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ebeb436e-f4b1-47df-90e7-b2498d33ff29")
+	)
+	(junction
+		(at 248.92 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ee1a77c2-a45d-41c6-a08b-726a0f4a0718")
 	)
 	(junction
 		(at 278.13 133.35)
@@ -4653,7 +4653,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 120.65) (xy 248.92 77.47)
+			(xy 248.92 120.65) (xy 248.92 119.38)
 		)
 		(stroke
 			(width 0)
@@ -4800,16 +4800,6 @@
 			(type default)
 		)
 		(uuid "224b451c-d12c-45c3-8016-5b8c7786644b")
-	)
-	(wire
-		(pts
-			(xy 245.11 119.38) (xy 245.11 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "224f474a-7b1d-45fe-bee1-befa89a1d372")
 	)
 	(wire
 		(pts
@@ -5010,6 +5000,16 @@
 			(type default)
 		)
 		(uuid "44cbe3af-47a6-4a0e-bb09-40bb464a891c")
+	)
+	(wire
+		(pts
+			(xy 248.92 119.38) (xy 248.92 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4616ff98-75ef-4e1f-94b2-9194a44678df")
 	)
 	(wire
 		(pts
@@ -5693,23 +5693,13 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 121.92) (xy 248.92 121.92)
+			(xy 242.57 121.92) (xy 245.11 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a22b6642-369e-4c34-93c9-8c465c1593f4")
-	)
-	(wire
-		(pts
-			(xy 248.92 121.92) (xy 248.92 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4b7f339-a67c-46b3-882e-1539141a4ec2")
 	)
 	(wire
 		(pts
@@ -5790,6 +5780,16 @@
 			(type default)
 		)
 		(uuid "af26eb5e-d6c7-4093-a07f-cb1e540e45b5")
+	)
+	(wire
+		(pts
+			(xy 242.57 119.38) (xy 248.92 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b048bf6d-47d3-4e52-8452-a056f402d4db")
 	)
 	(wire
 		(pts
@@ -6103,6 +6103,16 @@
 	)
 	(wire
 		(pts
+			(xy 245.11 118.11) (xy 245.11 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4444c8b-8862-4aff-ba24-ed1dd27a7844")
+	)
+	(wire
+		(pts
 			(xy 176.53 45.72) (xy 234.95 45.72)
 		)
 		(stroke
@@ -6110,16 +6120,6 @@
 			(type default)
 		)
 		(uuid "d78471e3-3abc-4724-9a81-1cea7a1285ed")
-	)
-	(wire
-		(pts
-			(xy 242.57 119.38) (xy 245.11 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d79aca91-1c93-47f9-b01f-8d5ded2bbb17")
 	)
 	(wire
 		(pts
@@ -9867,7 +9867,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "83ad2362-9401-4c83-9174-a92897cfcd48")
-		(property "Reference" "R?"
+		(property "Reference" "R14"
 			(at 270.256 97.536 0)
 			(effects
 				(font
@@ -9921,7 +9921,7 @@
 		(instances
 			(project "minithing"
 				(path "/d717513f-228d-40ff-a576-44c7a34457d9"
-					(reference "R?")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -12554,7 +12554,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f51fae8c-65a5-4bca-bef2-e9b4fe039cc2")
-		(property "Reference" "R?"
+		(property "Reference" "R13"
 			(at 254.254 97.536 0)
 			(effects
 				(font
@@ -12608,7 +12608,7 @@
 		(instances
 			(project "minithing"
 				(path "/d717513f-228d-40ff-a576-44c7a34457d9"
-					(reference "R?")
+					(reference "R13")
 					(unit 1)
 				)
 			)

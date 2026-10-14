@@ -26,9 +26,16 @@ Adafruit_AHTX0 aht;
 RTC_DS3231 rtc;
 Adafruit_MCP23008 mcp;
 
+// Device presence flags, set in initHardware() and used by serial telemetry
+static bool ahtFound = false;
+static bool rtcFound = false;
+static bool mcpFound = false;
+
 //Static variables
 static bool Fah = true;
 static bool isFinishedPcbMode = false;
+static float smoothedBatteryVoltage = -1.0;
+static float smoothedHumidity = -1.0;
 
 //Function Variables for given attachments
 /*
@@ -97,6 +104,13 @@ int getJustPressedButton();
 void drawBitmap(const uint8_t *bitmap, int x, int y, int w, int h);
 
 #ifdef __AVR__
+// Disable watchdog timer early in startup (.init3) to prevent bootloader reset loops during code upload
+void disable_wdt_at_boot(void) __attribute__((naked)) __attribute__((section(".init3")));
+void disable_wdt_at_boot(void) {
+  MCUSR = 0;
+  wdt_disable();
+}
+
 ISR(WDT_vect) {
   // Watchdog timer interrupt (wakes up MCU from sleep)
 }
@@ -171,8 +185,53 @@ B11111,
 B01110,
 };
 
-static const unsigned char PROGMEM vivlos[]={
-
+static const unsigned char PROGMEM vivlos[] = {
+  B00000000, B00000000, B00010000, B00000000, B00000000, B00000000,
+  B00000000, B00000000, B00111000, B00000000, B00110000, B00000000,
+  B00000000, B00000000, B00101100, B00000000, B01110000, B00000000,
+  B00000000, B00000000, B00100100, B01111100, B11110000, B00000000,
+  B00000000, B00000000, B00100110, B11001001, B11110000, B00000000,
+  B00000000, B00000000, B00100001, B00011011, B11110000, B00000000,
+  B00000000, B00000111, B00100010, B00011111, B11100000, B00000000,
+  B00000000, B00001000, B10110100, B00001100, B11100000, B00000000,
+  B00000000, B00001000, B01011000, B00111000, B01100000, B00000000,
+  B00000000, B00011000, B00111000, B11100100, B00101111, B00000000,
+  B00000000, B00010110, B01110001, B10000010, B00110111, B00000000,
+  B00000000, B00010011, B11100111, B00000001, B11010011, B00000000,
+  B00000000, B00010000, B11011100, B00000000, B00010001, B00000000,
+  B00000000, B00011111, B11110000, B00000000, B00011001, B10000000,
+  B00000000, B00010000, B10000000, B00000000, B00010100, B10000000,
+  B00000000, B00011111, B10000001, B00000000, B00010010, B10000000,
+  B00000000, B00010001, B10000111, B00001100, B00010001, B10000000,
+  B00000000, B00010011, B10001000, B10010010, B00010001, B10000000,
+  B00000000, B00011100, B10010110, B10100001, B00010001, B10000000,
+  B00000000, B00010000, B10101010, B10101100, B10010010, B10000000,
+  B00000000, B00010001, B10100010, B11001010, B10010100, B10000000,
+  B00000000, B00011110, B10000000, B10001000, B10011000, B10000000,
+  B00000000, B00110001, B10010000, B00000001, B00010000, B10000000,
+  B00000000, B00100011, B10001000, B00000011, B00111000, B10000000,
+  B00000000, B00101111, B01001001, B01010110, B01010110, B10000000,
+  B00000000, B00111110, B01000100, B10100100, B11011001, B10000000,
+  B00000000, B00100010, B01000110, B00001101, B10010100, B10000000,
+  B00000000, B00110010, B01000011, B11111001, B00010111, B10000000,
+  B00000000, B00101110, B11000010, B00011001, B10011001, B10000000,
+  B00000000, B01111111, B10001110, B00010100, B10010010, B10000000,
+  B00000000, B01110101, B00001010, B00010010, B01111100, B10000000,
+  B00000000, B01001111, B00010001, B11100001, B10110100, B10000000,
+  B00000000, B11010110, B00110000, B00000000, B11011010, B10000000,
+  B00000000, B10101110, B01101001, B11100001, B11101001, B10000000,
+  B00000001, B10001010, B11000111, B00110011, B01111100, B10000000,
+  B00000001, B01011011, B10000011, B00011110, B01001011, B10000000,
+  B00000011, B00111000, B01000000, B10001100, B10001100, B10000000,
+  B00000010, B00111000, B01000001, B11011100, B10001101, B10000000,
+  B00001110, B00101000, B01000001, B01010110, B10001110, B11000000,
+  B00011100, B01101000, B01000001, B01110010, B10101010, B01000000,
+  B00010010, B11001000, B01100001, B11100011, B11001011, B01000000,
+  B00110011, B10001000, B01011000, B11000000, B01011001, B01100000,
+  B01100010, B00001111, B11001111, B10000000, B01010101, B10110000,
+  B01000100, B00001000, B10000000, B10000000, B01110100, B10010000,
+  B10011000, B00001000, B10000000, B10000000, B10100110, B11001000,
+  B00010000, B00010000, B10000000, B10000000, B10100110, B01111000
 };
 
 // --------------------------------------------------------
@@ -180,26 +239,37 @@ static const unsigned char PROGMEM vivlos[]={
 // --------------------------------------------------------
 void initHardware() { //Checks whether sensors exist
   if (!aht.begin()) {
+    ahtFound = false;
     Serial.println(F("Could not find AHT20"));
+  } else {
+    ahtFound = true;
   }
   if (!rtc.begin()) {
+    rtcFound = false;
     Serial.println(F("Could not find RTC DS3231"));
+  } else {
+    rtcFound = true;
   }
   
   // Check if MCP23008 is present
   if (mcp.begin()) {
+    mcpFound = true;
     isFinishedPcbMode = true;
     Serial.println(F("MCP23008 detected: Entering Finished PCB Mode"));
     
     // Configure MCP23008 pins as inputs with pullups
-    for (int i = 0; i < 4; i++) {
-      mcp.pinMode(i, INPUT_PULLUP);
+    // GP0-3 are the buttons; GP4-7 are unconnected, pullups keep
+    // the serial telemetry GPIO readings stable instead of floating.
+    for (int i = 0; i < 8; i++) {
+      mcp.pinMode(i, INPUT);
+      mcp.pullUp(i, HIGH);
     }
     
     // Configure TP4056 pins on finished PCB
     pinMode(TP4056_STDBY, INPUT_PULLUP);
     pinMode(TP4056_CHRG, INPUT_PULLUP);
   } else {
+    mcpFound = false;
     isFinishedPcbMode = false;
     Serial.println(F("MCP23008 not found: Entering Prototype Mode"));
   }
@@ -221,7 +291,14 @@ bool isChargeComplete() {
 float getBatteryVoltage() {
   int rawValue = analogRead(BATT_VOLTAGE_PIN); 
   // Assuming 5V reference and voltage divider that halves the voltage
-  return (rawValue / 1023.0) * 3.7 * 2.0; 
+  float currentVoltage = (rawValue / 1023.0) * 3.7 * 2.0; 
+  if (smoothedBatteryVoltage < 0.0) {
+    smoothedBatteryVoltage = currentVoltage;
+  } else {
+    // Exponential Moving Average filter (alpha = 0.05) to stabilize readings
+    smoothedBatteryVoltage = 0.05 * currentVoltage + 0.95 * smoothedBatteryVoltage;
+  }
+  return smoothedBatteryVoltage; 
 } //Returns batt voltage
 int getBatteryPercent(){
   return (getBatteryVoltage() / 3.7) * 100;
@@ -231,7 +308,14 @@ void readAHT20(float &temp, float &hum) {
   sensors_event_t humidity_event, temp_event;
   aht.getEvent(&humidity_event, &temp_event);
   temp = temp_event.temperature;
-  hum = humidity_event.relative_humidity;
+  float rawHum = humidity_event.relative_humidity;
+  if (smoothedHumidity < 0.0) {
+    smoothedHumidity = rawHum;
+  } else {
+    // Exponential Moving Average filter (alpha = 0.1) to stabilize readings
+    smoothedHumidity = 0.1 * rawHum + 0.9 * smoothedHumidity;
+  }
+  hum = smoothedHumidity;
 } //variables: temp, hum
 
 DateTime readRTC() {
@@ -249,12 +333,111 @@ bool readSwitch(uint8_t swNum) {
   }
 }
 
+// --------------------------------------------------------
+// Serial Telemetry
+// --------------------------------------------------------
+static unsigned long lastSerialPrint = 0;
+static const unsigned long SERIAL_INTERVAL_MS = 1000; // 1 line per second
+
+void printPaddedNumber(int v) {
+  if (v < 10) Serial.print('0');
+  Serial.print(v);
+}
+
+void printSerialTelemetry() {
+  // DS3231: date and time
+  if (rtcFound) {
+    DateTime now = readRTC();
+    Serial.print(now.year());
+    Serial.print('-');
+    printPaddedNumber(now.month());
+    Serial.print('-');
+    printPaddedNumber(now.day());
+    Serial.print(' ');
+    printPaddedNumber(now.hour());
+    Serial.print(':');
+    printPaddedNumber(now.minute());
+    Serial.print(':');
+    printPaddedNumber(now.second());
+  } else {
+    Serial.print(F("RTC n/a"));
+  }
+
+  // AHT20: temperature (C and F) and humidity
+  if (ahtFound) {
+    float t = 0, h = 0;
+    readAHT20(t, h);
+    Serial.print(F(" | AHT "));
+    Serial.print(t, 1);
+    Serial.print('C');
+    Serial.print('/');
+    Serial.print(t * 9.0f / 5.0f + 32.0f, 1);
+    Serial.print('F');
+    Serial.print(' ');
+    Serial.print(h, 1);
+    Serial.print('%');
+  } else {
+    Serial.print(F(" | AHT n/a"));
+  }
+
+  // DS3231: internal temperature sensor (it has one, ~-40..+85C)
+  if (rtcFound) {
+    Serial.print(F(" | DS3231 "));
+    Serial.print(rtc.getTemperature(), 1);
+    Serial.print('C');
+  }
+
+  // MCP23008: all 8 GPIO states (1 = high / unpressed)
+  if (mcpFound) {
+    Serial.print(F(" | MCP "));
+    for (int i = 0; i < 8; i++) {
+      Serial.print(mcp.digitalRead(i) ? '1' : '0');
+    }
+  } else {
+    Serial.print(F(" | MCP n/a"));
+  }
+
+  // Buttons: Up/Down/Yes/Cancel (MCP GP0-3 on finished PCB, D2-D5 in prototype)
+  Serial.print(F(" | BTN U"));
+  Serial.print(readSwitch(BTN_UP_LEFT) ? '1' : '0');
+  Serial.print(F(" D"));
+  Serial.print(readSwitch(BTN_DOWN_RIGHT) ? '1' : '0');
+  Serial.print(F(" Y"));
+  Serial.print(readSwitch(BTN_YES) ? '1' : '0');
+  Serial.print(F(" C"));
+  Serial.print(readSwitch(BTN_CANCEL) ? '1' : '0');
+
+  // Battery voltage, percent, and TP4056 charging status
+  Serial.print(F(" | Bat "));
+  Serial.print(getBatteryVoltage(), 2);
+  Serial.print('V');
+  Serial.print(' ');
+  Serial.print(getBatteryPercent());
+  Serial.print('%');
+  Serial.print(F(" Chg:"));
+  Serial.print(isCharging() ? 'y' : 'n');
+  Serial.print(F(" Full:"));
+  Serial.print(isChargeComplete() ? 'y' : 'n');
+
+  Serial.println();
+}
+
 void setup() {
+  #ifdef __AVR__
+  MCUSR = 0;
+  wdt_disable();
+  #endif
+
   Serial.begin(115200);
+  delay(300);            // Startup grace period to stabilize Serial/DTR lines on code upload
   Wire.begin();          // Initialize I2C bus before talking to sensors
   // NOTE: Do NOT enable internal pull-ups (they pull to 5V).
   // Use external 4.7k resistors to 3.3V instead.
   initHardware();
+
+  // Serial telemetry banner + immediate first reading
+  Serial.println(F("--- FirstArdTest telemetry (1 line/sec) ---"));
+  printSerialTelemetry();
 
   // In Prototype Mode, configure D2-D5 as button inputs
   if (!isFinishedPcbMode) {
@@ -295,6 +478,14 @@ int getJustPressedButton() {
 }
 
 void loop() {
+  // Serial telemetry: one line per second (loop is blocked during sleep,
+  // so nothing prints while asleep)
+  unsigned long nowMs = millis();
+  if (nowMs - lastSerialPrint >= SERIAL_INTERVAL_MS) {
+    lastSerialPrint = nowMs;
+    printSerialTelemetry();
+  }
+
   int btn = getJustPressedButton();
   
   // State transitions and button logic
@@ -459,6 +650,38 @@ void tehuba() {
   drawBitmap(battery, slide, 0, 8, 9); 
   display.print(battPct); 
   display.println(F("%"));
+
+  // Bouncing logic for the centered vivlos bitmap (45x40 pixels)
+  int yOffset = 0;
+  unsigned long cycleTime = millis() % 6000; // 6-second cycle: bounce for 1.5s, rest for 4.5s
+  if (cycleTime < 1500) {
+    // 2 bounces in 1.5 seconds (frequency = 1.33 Hz)
+    float angle = (cycleTime / 1500.0) * 2.0 * PI;
+    yOffset = -abs(sin(angle)) * 5; // bounce height of 5 pixels
+  }
+
+  // Draw the vivlos bitmap in the center of the screen
+  // Centered horizontally: (128 - 45) / 2 = 41
+  // Centered vertically (cut off bottom to 40px height): (64 - 40) / 2 = 12
+  drawBitmap(vivlos, 41, 12 + yOffset, 45, 40);
+
+  // Draw the time on the bottom row of the screen
+  if (rtcFound) {
+    display.setTextSize(1);
+    display.setCursor(40, 56);
+    if (now.hour() < 10) display.print('0');
+    display.print(now.hour());
+    display.print(':');
+    if (now.minute() < 10) display.print('0');
+    display.print(now.minute());
+    display.print(':');
+    if (now.second() < 10) display.print('0');
+    display.print(now.second());
+  } else {
+    display.setTextSize(1);
+    display.setCursor(40, 56);
+    display.print(F("RTC n/a"));
+  }
 }
 
 void showMenuScreen() {
@@ -581,6 +804,12 @@ void enterSleepMode() {
     
     sleep_disable();
     
+    // Check if Serial is receiving data (e.g. code upload attempt or serial monitor)
+    if (Serial.available()) {
+      buttonPressed = true;
+      break;
+    }
+    
     // Check if any button on MCP23008 is pressed (LOW)
     for (int i = 0; i < 4; i++) {
       if (readSwitch(i)) {
@@ -593,8 +822,9 @@ void enterSleepMode() {
   disableWDT();
   ADCSRA = old_ADCSRA; // Restore ADC
   #else
-  // Non-AVR fallback: just wait for a button press
+  // Non-AVR fallback: wait for button press or Serial upload activity
   while (true) {
+    if (Serial.available()) break;
     bool pressed = false;
     for (int i = 0; i < 4; i++) {
       if (readSwitch(i)) {

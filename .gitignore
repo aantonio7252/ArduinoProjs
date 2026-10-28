@@ -1,0 +1,28 @@
+# KiCad auto-backups, caches and local settings
+*-backups/
+*-bak
+_autosave-*
+fp-info-cache
+*.lck
+*.kicad_prl
+
+# Vendor 3D models - large and re-downloadable
+*.step
+*.stp
+*.wrl
+
+# Arduino / build output
+build/
+.pio/
+*.elf
+*.hex
+*.map
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
